@@ -1,0 +1,36 @@
+{
+  "singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 100,
+  "arrowParens": "always",
+  "parser": "typescript",
+  "plugins": ["prettier-plugin-organize-imports"],
+  "endOfLine": "lf",
+  "overrides": [
+    {
+      "files": "*.md",
+      "options": {
+        "parser": "markdown"
+      }
+    },
+    {
+      "files": ".tjsclirc",
+      "options": {
+        "parser": "json5"
+      }
+    },
+    {
+      "files": [
+        ".vscode/launch.json",
+        ".vscode/settings.json",
+        "tsconfig.prod.json",
+        "tsconfig.eslint.json",
+        "tsconfig.dts.json",
+        "tsconfig.json"
+      ],
+      "options": {
+        "parser": "json"
+      }
+    }
+  ]
+}
