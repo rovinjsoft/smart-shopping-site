@@ -5,7 +5,7 @@ import {
   disclaimerContentKo,
   disclaimerHeadingEn,
   disclaimerHeadingKo,
-} from '#/app/contents/disclaimer';
+} from '#/app/_contents/disclaimer';
 import DarkDocumentLayout from '#/components/DarkDocumentLayout';
 import LightDocumentLayout from '#/components/LightDocumentLayout';
 import { css } from '#/styled-system/css';

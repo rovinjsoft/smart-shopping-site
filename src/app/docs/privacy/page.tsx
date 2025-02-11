@@ -1,44 +1,48 @@
 'use client';
 
-import { disclaimerContentKo } from '#/app/contents/disclaimer';
-import DocumentLayout from '#/components/DarkDocumentLayout';
-import { css } from '#/styled-system/css';
-import { nanoid } from 'nanoid';
-import { Suspense } from 'react';
+import PrivacyPolicyDocsEn from '#/app/docs/privacy/_locales/privacy_en';
+import PrivacyPolicyDocsKo from '#/app/docs/privacy/_locales/privacy_ko';
+import DarkDocumentLayout from '#/components/DarkDocumentLayout';
+import LightDocumentLayout from '#/components/LightDocumentLayout';
+import { getLocaleString } from '#/util/qs/getLocaleString';
+import { getThemeString } from '#/util/qs/getThemeString';
+import { useSearchParams } from 'next/navigation';
+import { Fragment, Suspense } from 'react';
 
-const styleH1 = css({
-  textAlign: 'center',
-  fontSize: '3xl',
-  fontWeight: 'bold',
-  marginBottom: '0.5rem',
-});
+function ThemeLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  const searchParams = useSearchParams();
+  const theme = getThemeString(searchParams.get('theme'));
 
-const styleP = css({
-  marginBottom: '1rem',
-});
+  return theme === 'dark' ? (
+    <DarkDocumentLayout>{children}</DarkDocumentLayout>
+  ) : (
+    <LightDocumentLayout>{children}</LightDocumentLayout>
+  );
+}
 
-// export const metadata: Metadata = {
-//   title: 'SmartShopping',
-//   description: 'Smart',
-// };
+function PrivacyPolicyMessage() {
+  const searchParams = useSearchParams();
+  const locale = getLocaleString(searchParams.get('locale'));
+
+  return <Fragment>{locale === 'ko' ? <PrivacyPolicyDocsKo /> : <PrivacyPolicyDocsEn />}</Fragment>;
+}
+
+function PrivacyPolicyContent() {
+  return (
+    <ThemeLayout>
+      <PrivacyPolicyMessage />
+    </ThemeLayout>
+  );
+}
 
 export default function PrivacyPolicy() {
   return (
-    <DocumentLayout>
-      <Suspense>
-        <section>
-          <h1 className={styleH1}>Disclaimer</h1>
-        </section>
-        <section>
-          {disclaimerContentKo.map((content) => {
-            return (
-              <p key={nanoid()} className={styleP}>
-                {content}
-              </p>
-            );
-          })}
-        </section>
-      </Suspense>
-    </DocumentLayout>
+    <Suspense>
+      <PrivacyPolicyContent />
+    </Suspense>
   );
 }

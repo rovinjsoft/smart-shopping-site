@@ -2,7 +2,7 @@ import { css } from '#/styled-system/css';
 
 const darkTheme = css({
   padding: '3em 2em',
-  height: '100vh',
+  minHeight: '100vh',
   width: '100vw',
   color: '#D4D4D4',
   background: '#1A1A1A',
