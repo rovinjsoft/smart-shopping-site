@@ -1,11 +1,10 @@
 @layer reset, base, tokens, recipes, utilities;
 
 :root {
-  --background: #FFA726;
+  --background: #FEFEFE;
   --foreground: #1A1A1A;
 
   body {
-    background: #FFA726;
+    background: #FEFEFE;;
   }
 }
-

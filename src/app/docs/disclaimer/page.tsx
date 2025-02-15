@@ -6,11 +6,9 @@ import {
   disclaimerHeadingEn,
   disclaimerHeadingKo,
 } from '#/app/_contents/disclaimer';
-import DarkDocumentLayout from '#/components/DarkDocumentLayout';
-import LightDocumentLayout from '#/components/LightDocumentLayout';
+import { ThemeLayout } from '#/components/themes/ThemeLayout';
 import { css } from '#/styled-system/css';
 import { getLocaleString } from '#/util/qs/getLocaleString';
-import { getThemeString } from '#/util/qs/getThemeString';
 import { nanoid } from 'nanoid';
 import { useSearchParams } from 'next/navigation';
 import { Fragment, Suspense } from 'react';
@@ -25,21 +23,6 @@ const styleH1 = css({
 const styleP = css({
   marginBottom: '1rem',
 });
-
-function ThemeLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  const searchParams = useSearchParams();
-  const theme = getThemeString(searchParams.get('theme'));
-
-  return theme === 'dark' ? (
-    <DarkDocumentLayout>{children}</DarkDocumentLayout>
-  ) : (
-    <LightDocumentLayout>{children}</LightDocumentLayout>
-  );
-}
 
 function DisclaimerMessage() {
   const searchParams = useSearchParams();

@@ -2,7 +2,7 @@ import { css } from '#/styled-system/css';
 
 const lightTheme = css({
   padding: '3em 2em',
-  height: '100vh',
+  minHeight: '100vh',
   width: '100vw',
   color: '#555555',
   background: '#FEFEFE',

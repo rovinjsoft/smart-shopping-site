@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "clsx": "^2.1.1",
+    "gsap": "^3.12.7",
+    "my-easy-fp": "^0.22.0",
     "nanoid": "^5.0.9",
     "next": "15.1.6",
     "react": "^19.0.0",
