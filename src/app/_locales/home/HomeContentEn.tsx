@@ -161,7 +161,7 @@ export default function HomeContentEn() {
       </section>
       <section className={styledPadding}>
         <center className={styledPadBot}>
-          <a href="mailto:rovinjsoft@gmail.com">contact: rovinjsoft@gmail.com</a>
+          <a href="mailto:rovinjsoft@gmail.com">support: rovinjsoft@gmail.com</a>
         </center>
       </section>
     </Fragment>
