@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { css } from '#/styled-system/css';
 import clsx from 'clsx';
 import gsap from 'gsap';
@@ -80,73 +81,82 @@ export default function HomeContentEn() {
   return (
     <Fragment>
       <section className={styledPadding}>
-        <h1 className={styleH1}>알뜰계산기</h1>
+        <h1 className={styleH1}>Smart Shopping</h1>
         <center>
-          <img ref={imgRef01} className={styledImg} src="/smart-shopping-site/icon_body.png" />
+          <img
+            alt="application icon"
+            ref={imgRef01}
+            className={styledImg}
+            src="/smart-shopping-site/icon_body.png"
+          />
         </center>
       </section>
       <section className={styledPadding}>
-        <h2 className={clsx(styleH2, styledPadBot)}>간편한 할인 가격계산</h2>
+        <h2 className={clsx(styleH2, styledPadBot)}>Simple Way to Calculate Off Prices</h2>
         <center>
           <img
+            alt="calculator screen"
             ref={imgRef02}
             className={styledScImg}
             src="/smart-shopping-site/screenshot/smartshopping_calculator.png"
           />
         </center>
         <ul className={styledPadTop}>
-          <li>쉽게 2+1 가격을 계산하세요!</li>
-          <li>10%, 20%, 할인이 여러 번 반복될 때 불편하셨죠?</li>
-          <li>알뜰계산기로 편하게 계산할 수 있습니다</li>
+          <li>Easily calculate the price for ‘Buy 2, Get 1 Free’ deals!</li>
+          <li>Tired of applying 10% off, 20% off over and over again?</li>
+          <li>Easily calculate the final price with Smart Shopping!</li>
         </ul>
       </section>
       <section className={styledPadding}>
-        <h2 className={clsx(styleH2, styledPadBot)}>중량, 묶음 가격계산</h2>
+        <h2 className={clsx(styleH2, styledPadBot)}>Calculate Price per Pack or per Unit</h2>
         <center>
           <img
+            alt="per unit screen"
             ref={imgRef03}
             className={styledScImg}
             src="/smart-shopping-site/screenshot/smartshopping_weight.png"
           />
           <img
+            alt="per pack screen"
             ref={imgRef04}
             className={styledScImg}
             src="/smart-shopping-site/screenshot/smartshopping_pack.png"
           />
         </center>
         <ul className={styledPadTop}>
-          <li>할인 가격 계산과 함께, 중량과 묶음도 포함해보세요</li>
-          <li>무게 당 가격과 묶음 상품 가격을 간편하게 계산할 수 있습니다</li>
+          <li>Include both off-price calculations and unit/pack pricing!</li>
+          <li>Easily calculate price per unit or per pack</li>
         </ul>
       </section>
       <section className={styledPadding}>
-        <h2 className={clsx(styleH2, styledPadBot)}>장바구니</h2>
+        <h2 className={clsx(styleH2, styledPadBot)}>Cart</h2>
         <center>
           <img
+            alt="shopping cart screen"
             ref={imgRef05}
             className={styledScImg}
             src="/smart-shopping-site/screenshot/smartshopping_cart.png"
           />
         </center>
         <ul className={styledPadTop}>
-          <li>마트갈 때는 알뜰계산기와 함께!</li>
-          <li>상품 가격을 장바구니에 담으면 합계를 계산할 수 있습니다</li>
-          <li>이제 알뜰 계산기로 알뜰한 쇼핑, 절약하는 쇼핑하세요</li>
+          <li>Shopping with Smart Shopping!</li>
+          <li>Add the calculated price to your cart and easily calculate the total.</li>
+          <li>Save more and spend smarter with Smart Shopping!</li>
         </ul>
       </section>
       <section className={styledPadding}>
-        <h2 className={clsx(styleH2, styledPadBot)}>상세한 가격 정보</h2>
+        <h2 className={clsx(styleH2, styledPadBot)}>Price Breakdown: Off, Unit & Pack</h2>
         <center>
           <img
+            alt="Price Breakdown: Off, Unit & Pack screen"
             ref={imgRef06}
             className={styledScImg}
             src="/smart-shopping-site/screenshot/smartshopping_detail.png"
           />
         </center>
         <ul className={styledPadTop}>
-          <li>장바구니에서 상세 가격을 볼 수 있습니다</li>
-          <li>계산했던 가격을 다시 확인할 수 있습니다</li>
-          <li>왜 이 가격이 담겼는지 쉽게 확인해보세요</li>
+          <li>Review your calculated price and see the breakdown easily.</li>
+          <li>Check your calculated price and understand why it was added.</li>
         </ul>
       </section>
       <section className={styledPadding}>
